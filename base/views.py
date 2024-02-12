@@ -15,3 +15,7 @@ def create(request):
         Todo.objects.create(name=name,description=description,status=status)
         return redirect('home')
     return render(request,'create.html')
+
+def edit(request,pk):
+    todo_obj = Todo.objects.get(id=pk)
+    return render(request,'edit.html')
